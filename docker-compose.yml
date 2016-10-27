@@ -1,0 +1,59 @@
+version: '2'
+
+services:
+  data:
+    image: algotp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: 'always'
+    volumes:
+      - ./atp:/atp/atp
+    # ports:
+    #   - "8000:80"
+
+  # downloader:
+  #   image: ats/downloader
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   restart: 'always'
+  #   volumes:
+  #     - ./src:/app
+  #   ports:
+  #     - "8000:80"
+  #     # - "8887:8887"
+  #   # external_links:
+  #     # - project_db_1:mysql
+  #   links:
+  #     - test_client:ats/test_client
+  #   environment:
+  #     - DEBUG=true
+  # daily_downloader:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile_daily
+  #   restart: 'always'
+  # db:
+  #   image: mongo
+  #   ports:
+  #     - "27017:27017"
+  # admin:
+  #   image: mongo-express
+  #   links:
+  #     - db:mongo
+  #   ports:
+  #     - "8081:8081"
+  # test_client:
+  #   image: ats/test_client
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile_test
+  #   # links:
+  #   #   - downloader:ats/downloader
+  #   # ports:
+  #     # - "8887:8887"
+  #   restart: 'always'
+  #   # build:
+  #   #   context: .
+  #   #   dockerfile: Dockerfile_mongodb
