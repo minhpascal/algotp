@@ -11,7 +11,7 @@ algorithmic trading platform
 
     $ docker-compose up
 
->build image/s & launch app
+>build image/s & launch 
 
     $ docker-compose up --build
 
